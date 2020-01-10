@@ -5,7 +5,7 @@ const TabBottom = () => (
   <WrapTabBottom>
     <Container>
       <TabBottomStyle>
-        <div>Home</div>
+        <div className="active">Home</div>
         <div>Add Pokemon</div>
         <div>My List</div>
       </TabBottomStyle>

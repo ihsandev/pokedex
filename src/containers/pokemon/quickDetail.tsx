@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Tags } from "../../components";
+import { Link } from "react-router-dom";
 import { HeadDetail, BodyDetail, ButtonDetail, PokemonImage } from "./styled";
 import axios from "axios";
 
@@ -80,11 +81,13 @@ const QuickDetail: React.FC<Props> = ({
             </div>
             <PokemonImage color={types}>
               <img
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
+                src={`https://img.pokemondb.net/artwork/${data.name}.jpg`}
                 alt="pokemonImage"
               />
             </PokemonImage>
-            <ButtonDetail color={types}>See Full Detail</ButtonDetail>
+            <Link to={`/pokemon/detail/${data.name}`}>
+              <ButtonDetail color={types}>See Full Detail</ButtonDetail>
+            </Link>
           </BodyDetail>
         </Modal>
       )}

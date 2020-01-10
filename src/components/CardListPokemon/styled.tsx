@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   background-color: #fff;
   border-radius: 15px;
   border: 1px solid #eaeaea;
-  padding: 0px 10px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -18,15 +18,16 @@ export const Wrapper = styled.div`
   h3 {
     font-weight: bolder;
     text-transform: capitalize;
-    margin-left: 15px;
+    margin-left: 30px;
+    font-size: 1.2em;
   }
 `;
 
 export const ImageView = styled.div`
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  text-align: center;
   img {
-    width: 100%;
-    object-fit: cover;
+    max-width: 100px;
+    max-height: 100px;
   }
 `;

@@ -60,16 +60,13 @@ export const PokemonImage = styled.div`
   position: absolute;
   top: 30px;
   right: 20px;
-  width: 120px;
-  height: 120px;
+  width: 150px;
   background-color: #fff;
   border-radius: 10px;
-  border: 1px solid ${({ color }: any) => PokemonTypeColor(color)};
   margin-bottom: 50px;
   img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+    max-height: 150px;
+    max-width: 150px;
   }
 `;
 
@@ -90,7 +87,7 @@ export const ButtonDetail = styled.button`
 `;
 
 export const LoadingMore = styled.div`
-  margin-top: 40px;
+  margin-top: 30px;
   font-weight: bold;
   display: flex;
   align-items: center;

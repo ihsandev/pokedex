@@ -3,9 +3,9 @@ import { Skeleton } from "../../components";
 import { Wrapper, ImageView } from "./styled";
 
 export interface PropsCard extends React.HTMLAttributes<HTMLDivElement> {
-  name: string;
-  src: string;
-  loading: boolean;
+  name?: string;
+  src?: string;
+  loading?: boolean;
 }
 const CardListPokemon: React.FC<PropsCard> = ({
   name,

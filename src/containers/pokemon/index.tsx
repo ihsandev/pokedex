@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MainLayout from "../../layouts";
 import { CardListPokemon, Skeleton } from "../../components";
-import { GET_POKEMON } from "../../config/api/api";
+import { GET_POKEMON } from "../../config/api";
 import { Total, LoadingMore } from "./styled";
 import QuickDetail from "./quickDetail";
 import axios from "axios";
@@ -82,8 +82,7 @@ const Pokemon = () => {
                 onClick={() => handleDetail(item.url)}
                 key={i}
                 name={item.name}
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i +
-                  1}.png`}
+                src={`https://img.pokemondb.net/artwork/${item.name}.jpg`}
                 loading={loading}
               />
             );

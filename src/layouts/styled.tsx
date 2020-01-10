@@ -11,6 +11,7 @@ export const Content = styled.div`
   padding: 70px 20px;
   background-color: #fff;
   box-sizing: border-box;
+  min-height: 100vh;
 `;
 
 // Header
@@ -61,6 +62,8 @@ export const WrapTabBottom = styled.div`
 export const TabBottomStyle = styled.div`
   background-color: rgb(3, 151, 12);
   /* padding: 20px 0;  */
+  height: 55px;
+  align-items: center;
   color: #fff;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -69,7 +72,12 @@ export const TabBottomStyle = styled.div`
   justify-content: space-around;
   > div {
     cursor: pointer;
-    padding: 20px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    &.active {
+      background-color: #fff;
+      color: rgb(3, 151, 12);
+    }
     &:hover {
       background-color: #fff;
       color: rgb(3, 151, 12);
