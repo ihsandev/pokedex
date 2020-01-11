@@ -43,7 +43,6 @@ const Evolution: React.FC<Props> = ({ id }) => {
                 <CardListPokemon
                   name={item.species.name}
                   src={`https://img.pokemondb.net/artwork/${item.species.name}.jpg`}
-                  loading={true}
                 />
               </Link>
             );

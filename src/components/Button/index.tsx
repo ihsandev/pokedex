@@ -1,4 +1,5 @@
 import { PokemonTypeColor } from "../../utils/_functions";
+import { MediaQuery } from "../../utils";
 import styled from "styled-components";
 
 const Button: any = styled.button`
@@ -7,6 +8,7 @@ const Button: any = styled.button`
   background-color: transparent;
   cursor: pointer;
   border: none;
+  width: 100%;
   border: 1.5px solid ${({ color }: any) => PokemonTypeColor(color)};
   border-radius: 50px;
   padding: 10px 30px;
@@ -15,6 +17,9 @@ const Button: any = styled.button`
   &:hover {
     background-color: ${({ color }: any) => PokemonTypeColor(color)};
     color: #fff;
+  }
+  ${MediaQuery.smMin} {
+    width: inherit;
   }
 `;
 

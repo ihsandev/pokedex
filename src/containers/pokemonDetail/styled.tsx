@@ -71,8 +71,8 @@ export const PokemonImage = styled.div`
   width: 100%;
   text-align: center;
   img {
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 120px;
+    max-width: 120px;
   }
   ${MediaQuery.smMin} {
     width: inherit;
@@ -126,4 +126,20 @@ export const Moves = styled.div`
   > span {
     margin-bottom: 10px;
   }
+`;
+
+export const Input = styled.input`
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+  width: 100%;
+`;
+
+export const WrapperAdd = styled.div`
+  margin-top: 40px;
+  width: 100%;
 `;

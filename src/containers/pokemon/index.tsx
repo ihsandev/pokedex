@@ -13,6 +13,7 @@ const Pokemon = () => {
   const [detailPokemon, setDetailPokemon] = useState(false);
   const [urlDetail, setUrlDetail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
 
   const getPokemon = () => {
     return new Promise((resolve, reject) => {
@@ -26,6 +27,7 @@ const Pokemon = () => {
           resolve(results);
           resolve(count);
           setLoading(true);
+          setLoadingMore(true);
         })
         .catch(err => {
           reject(err);
@@ -46,7 +48,7 @@ const Pokemon = () => {
     const element = document.documentElement;
     if (
       window.innerHeight + element.scrollTop === element.offsetHeight &&
-      loading
+      loadingMore
     ) {
       setPage(page + 20); // load more data
     }
@@ -84,11 +86,10 @@ const Pokemon = () => {
                 name={item.name}
                 id={i + 1}
                 src={`https://img.pokemondb.net/artwork/${item.name}.jpg`}
-                loading={loading}
               />
             );
           })}
-        {loading && (
+        {loadingMore && (
           <LoadingMore>
             <Skeleton.Line width={80} height={80} />
             <Skeleton.Line height={20} />

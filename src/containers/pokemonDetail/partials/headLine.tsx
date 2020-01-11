@@ -12,7 +12,12 @@ const HeadLine: React.FC<Props> = ({ detail, types }) => {
 
   return (
     <>
-      <AddToList types={types} showAdd={showAdd} setShowAdd={setShowAdd} />
+      <AddToList
+        types={types}
+        showAdd={showAdd}
+        setShowAdd={setShowAdd}
+        name={detail.name}
+      />
       <Button bottom={15} color={types} onClick={() => setShowAdd(!showAdd)}>
         Add To My List
       </Button>
