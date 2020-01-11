@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { PokemonTypeColor } from "../../utils/_functions";
+import { MediaQuery } from "../../utils";
 
 export const Box = styled.div`
   background-color: ${({ color }: any) => PokemonTypeColor(color)};
@@ -10,6 +11,11 @@ export const Box = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+  ${MediaQuery.sm} {
+    > div {
+      flex-direction: column;
+    }
   }
 `;
 
@@ -30,6 +36,9 @@ export const BodyDetail = styled.div`
   color: #fff;
   display: flex;
   flex-direction: column;
+  ${MediaQuery.sm} {
+    width: 100%;
+  }
   .descript {
     display: flex;
     flex-direction: column;
@@ -60,6 +69,10 @@ export const PokemonImage = styled.div`
   img {
     max-height: 200px;
     max-width: 200px;
+  }
+  ${MediaQuery.sm} {
+    width: 100%;
+    text-align: center;
   }
 `;
 

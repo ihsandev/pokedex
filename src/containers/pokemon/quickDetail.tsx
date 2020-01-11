@@ -41,9 +41,8 @@ const QuickDetail: React.FC<Props> = ({
     <>
       {Object.keys(data) && (
         <Modal
+          height="420px"
           visible={detailPokemon}
-          width="380px"
-          height="350px"
           onClose={() => setDetailPokemon(false)}
           color={types}
         >
@@ -78,6 +77,9 @@ const QuickDetail: React.FC<Props> = ({
                 <span>Weight</span>
                 <span>{data.weight}</span>
               </div>
+              <Link to={`/pokemon/detail/${data.name}`}>
+                <Button color={types}>See Full Detail</Button>
+              </Link>
             </div>
             <PokemonImage color={types}>
               <img
@@ -85,9 +87,6 @@ const QuickDetail: React.FC<Props> = ({
                 alt="pokemonImage"
               />
             </PokemonImage>
-            <Link to={`/pokemon/detail/${data.name}`}>
-              <Button color={types}>See Full Detail</Button>
-            </Link>
           </BodyDetail>
         </Modal>
       )}

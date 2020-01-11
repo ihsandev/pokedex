@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PokemonTypeColor } from "../../utils/";
+import { MediaQuery } from "../../utils";
 
 export const Total = styled.div`
   width: 100%;
@@ -20,6 +20,10 @@ export const HeadDetail = styled.div`
   margin-bottom: 40px;
   flex-direction: column;
   width: 100%;
+  ${MediaQuery.sm} {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
   h2 {
     font-weight: bold;
     font-size: 2em;
@@ -35,10 +39,20 @@ export const BodyDetail = styled.div`
   width: 100%;
   color: #202124;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  ${MediaQuery.sm} {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
   .descript {
     display: flex;
     flex-direction: column;
     padding-bottom: 15px;
+    ${MediaQuery.sm} {
+      order: 2;
+    }
     > div {
       padding: 15px;
       border-bottom: 1px solid #eaeaea;
@@ -57,16 +71,19 @@ export const BodyDetail = styled.div`
 `;
 
 export const PokemonImage = styled.div`
-  position: absolute;
-  top: 30px;
-  right: 20px;
-  width: 150px;
   background-color: #fff;
   border-radius: 10px;
   margin-bottom: 50px;
+  ${MediaQuery.sm} {
+    order: 1;
+    margin-bottom: 0;
+  }
   img {
     max-height: 150px;
     max-width: 150px;
+    ${MediaQuery.sm} {
+      max-height: 110px;
+    }
   }
 `;
 
