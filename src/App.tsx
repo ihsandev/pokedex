@@ -1,11 +1,17 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 import routes from "./config/routes";
 
 const App: React.FC = () => {
   return (
     <Router>
+      <Redirect from="/" to="/home" />
       <Switch>
         {routes &&
           routes.map((route, i) => {

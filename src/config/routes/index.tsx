@@ -3,7 +3,7 @@ import { Pokemon, DetailPokemon, MyListPokemon } from "../../containers";
 
 const routes = [
   {
-    path: "/",
+    path: "/home",
     component: <Pokemon />,
     exact: true
   },
