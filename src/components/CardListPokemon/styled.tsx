@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MediaQuery } from "../../utils";
 
 export const MainWrapper = styled.div`
   display: flex;
@@ -30,16 +31,23 @@ export const Wrapper = styled.div`
 `;
 
 export const ImageView = styled.div`
-  width: 100px;
   text-align: center;
   img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 80px;
+    max-height: 80px;
+  }
+  ${MediaQuery.smMin} {
+    img {
+      max-width: 100px;
+    }
   }
 `;
 
 export const Number = styled.div`
-  font-size: 2em;
+  font-size: 1.5em;
   color: #ddd;
   font-weight: bold;
+  ${MediaQuery.smMin} {
+    font-size: 2em;
+  }
 `;

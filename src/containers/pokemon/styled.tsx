@@ -17,12 +17,13 @@ export const Total = styled.div`
 // Quick Detail
 export const HeadDetail = styled.div`
   display: flex;
-  margin-bottom: 40px;
   flex-direction: column;
   width: 100%;
-  ${MediaQuery.sm} {
-    justify-content: center;
-    margin-bottom: 30px;
+  justify-content: center;
+  margin-bottom: 30px;
+  ${MediaQuery.smMin} {
+    justify-content: stretch;
+    margin-bottom: 40px;
   }
   h2 {
     font-weight: bold;
@@ -35,23 +36,25 @@ export const HeadDetail = styled.div`
 export const BodyDetail = styled.div`
   background-color: #fff;
   border-radius: 20px;
-  padding: 20px;
   width: 100%;
   color: #202124;
   position: relative;
   display: flex;
   justify-content: space-between;
-  ${MediaQuery.sm} {
-    flex-direction: column;
-    padding: 10px;
-    text-align: center;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  ${MediaQuery.smMin} {
+    padding: 20px;
+    flex-direction: row;
   }
   .descript {
     display: flex;
     flex-direction: column;
     padding-bottom: 15px;
-    ${MediaQuery.sm} {
-      order: 2;
+    order: 2;
+    ${MediaQuery.smMin} {
+      order: 1;
     }
     > div {
       padding: 15px;
@@ -73,16 +76,17 @@ export const BodyDetail = styled.div`
 export const PokemonImage = styled.div`
   background-color: #fff;
   border-radius: 10px;
-  margin-bottom: 50px;
-  ${MediaQuery.sm} {
-    order: 1;
-    margin-bottom: 0;
+  order: 1;
+  margin-bottom: 0;
+  ${MediaQuery.smMin} {
+    margin-bottom: 50px;
+    order: 2;
   }
   img {
     max-height: 150px;
-    max-width: 150px;
-    ${MediaQuery.sm} {
-      max-height: 110px;
+    max-height: 110px;
+    ${MediaQuery.smMin} {
+      max-width: 150px;
     }
   }
 `;

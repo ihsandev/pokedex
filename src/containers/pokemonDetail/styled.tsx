@@ -11,10 +11,11 @@ export const Box = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
   }
-  ${MediaQuery.sm} {
+  ${MediaQuery.smMin} {
     > div {
-      flex-direction: column;
+      flex-direction: row;
     }
   }
 `;
@@ -36,8 +37,9 @@ export const BodyDetail = styled.div`
   color: #fff;
   display: flex;
   flex-direction: column;
-  ${MediaQuery.sm} {
-    width: 100%;
+  width: 100%;
+  ${MediaQuery.smMin} {
+    width: inherit;
   }
   .descript {
     display: flex;
@@ -66,13 +68,15 @@ export const PokemonImage = styled.div`
   box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1);
   padding: 5px 10px;
   overflow: hidden;
+  width: 100%;
+  text-align: center;
   img {
     max-height: 200px;
     max-width: 200px;
   }
-  ${MediaQuery.sm} {
-    width: 100%;
-    text-align: center;
+  ${MediaQuery.smMin} {
+    width: inherit;
+    text-align: inherit;
   }
 `;
 

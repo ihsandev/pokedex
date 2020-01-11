@@ -27,9 +27,9 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 0px;
-  ${MediaQuery.sm} {
-    padding: 5px 10px;
+  padding: 5px 10px;
+  ${MediaQuery.smMin} {
+    padding: 5px 0px;
   }
 `;
 export const Brand = styled.div`
