@@ -11,6 +11,7 @@ export const ModalWrapper = styled.div`
   z-index: 999;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
   justify-content: center;
 `;
 
@@ -24,8 +25,9 @@ export const ModalContent = styled.div`
   margin: auto;
   animation-name: anime;
   animation-timing-function: ease;
+  box-sizing: border-box;
   color: #fff;
-  animation-duration: 0.5s;
+  animation-duration: 0.6s;
   animation-fill-mode: both;
   @keyframes anime {
     from {

@@ -41,7 +41,7 @@ const QuickDetail: React.FC<Props> = ({
     <>
       {Object.keys(data) && (
         <Modal
-          height="420px"
+          height="465px"
           visible={detailPokemon}
           onClose={() => setDetailPokemon(false)}
           color={types}

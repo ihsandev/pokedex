@@ -11,7 +11,7 @@ export interface Props {
 const Input = styled.input`
   border-radius: 5px;
   padding: 10px;
-  margin: 10px;
+  box-sizing: border-box;
   font-size: 1.2em;
   border: none;
   outline: none;
@@ -21,7 +21,7 @@ const AddToList: React.FC<Props> = ({ showAdd, types, setShowAdd }) => {
   return (
     <Modal
       visible={showAdd}
-      height="auto"
+      height="100px"
       onClose={() => setShowAdd(false)}
       color={types}
     >
