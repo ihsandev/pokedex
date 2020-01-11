@@ -3,6 +3,7 @@ import { GET_POKEMON } from "../../config/api";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import MainLayout from "../../layouts";
+import { Button } from "../../components";
 import { More } from "./styled";
 import HeadLine from "./partials/headLine";
 import MoreDetail from "./partials/moreDetail";
@@ -34,7 +35,7 @@ const DetailPokemon: React.FC = () => {
 
   useEffect(() => {
     getDetail();
-  }, []);
+  }, [name]);
   Object.keys(detail) && console.log(detail);
   return (
     <MainLayout>

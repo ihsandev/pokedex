@@ -70,22 +70,6 @@ export const PokemonImage = styled.div`
   }
 `;
 
-export const ButtonDetail = styled.button`
-  margin-top: 30px;
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  border: 1.5px solid ${({ color }: any) => PokemonTypeColor(color)};
-  border-radius: 50px;
-  padding: 10px 30px;
-  outline: none;
-  transition: all 0.2s ease;
-  &:hover {
-    background-color: ${({ color }: any) => PokemonTypeColor(color)};
-    color: #fff;
-  }
-`;
-
 export const LoadingMore = styled.div`
   margin-top: 30px;
   font-weight: bold;

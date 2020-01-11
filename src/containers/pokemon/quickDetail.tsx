@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Tags } from "../../components";
+import { Modal, Tags, Button } from "../../components";
 import { Link } from "react-router-dom";
-import { HeadDetail, BodyDetail, ButtonDetail, PokemonImage } from "./styled";
+import { HeadDetail, BodyDetail, PokemonImage } from "./styled";
 import axios from "axios";
 
 export interface Props {
@@ -86,7 +86,7 @@ const QuickDetail: React.FC<Props> = ({
               />
             </PokemonImage>
             <Link to={`/pokemon/detail/${data.name}`}>
-              <ButtonDetail color={types}>See Full Detail</ButtonDetail>
+              <Button color={types}>See Full Detail</Button>
             </Link>
           </BodyDetail>
         </Modal>

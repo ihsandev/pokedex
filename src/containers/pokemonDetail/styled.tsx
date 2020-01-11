@@ -76,6 +76,13 @@ export const TitleMore = styled.h2`
   margin-bottom: 25px;
 `;
 
+export const EvolutionCard = styled.div`
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+`;
+
 export const Moredetail = styled.div`
   > div {
     margin-bottom: 20px;
@@ -83,5 +90,23 @@ export const Moredetail = styled.div`
     span:nth-of-type(1) {
       width: 150px;
     }
+  }
+  > .moves {
+    border: 1px solid gray;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+    > span {
+      margin-bottom: 15px;
+    }
+    flex-direction: column;
+  }
+`;
+
+export const Moves = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  > span {
+    margin-bottom: 10px;
   }
 `;

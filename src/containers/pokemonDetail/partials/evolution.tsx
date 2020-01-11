@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { HOST } from "../../../config/api";
-import { TitleMore } from "../styled";
+import { TitleMore, EvolutionCard } from "../styled";
+import { Link } from "react-router-dom";
 import { CardListPokemon } from "../../../components";
 
 export interface Props {
@@ -31,21 +32,23 @@ const Evolution: React.FC<Props> = ({ id }) => {
 
   return (
     <div>
-      <TitleMore>Evolution</TitleMore>
-      <div>
+      {evolution && evolution.length > 0 ? (
+        <TitleMore>Evolution</TitleMore>
+      ) : null}
+      <EvolutionCard>
         {evolution &&
           evolution.map((item: any, i: number) => {
             return (
-              <CardListPokemon
-                // onClick={() => handleDetail(item.url)}
-                key={i}
-                name={item.species.name}
-                src={`https://img.pokemondb.net/artwork/${item.species.name}.jpg`}
-                loading={true}
-              />
+              <Link key={i} to={`/pokemon/detail/${item.species.name}`}>
+                <CardListPokemon
+                  name={item.species.name}
+                  src={`https://img.pokemondb.net/artwork/${item.species.name}.jpg`}
+                  loading={true}
+                />
+              </Link>
             );
           })}
-      </div>
+      </EvolutionCard>
     </div>
   );
 };

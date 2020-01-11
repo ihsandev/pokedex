@@ -1,5 +1,5 @@
 import React from "react";
-import { Pokemon, DetailPokemon } from "../../containers";
+import { Pokemon, DetailPokemon, MyListPokemon } from "../../containers";
 
 const routes = [
   {
@@ -10,6 +10,11 @@ const routes = [
   {
     path: "/pokemon/detail/:name",
     component: <DetailPokemon />,
+    exact: true
+  },
+  {
+    path: "/my-list",
+    component: <MyListPokemon />,
     exact: true
   }
 ];

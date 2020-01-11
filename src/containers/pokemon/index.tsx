@@ -67,7 +67,7 @@ const Pokemon = () => {
       <Total>
         Total Owned:{" "}
         {loading ? (
-          <span>{total}</span>
+          <span>{total} data</span>
         ) : (
           <span>
             <Skeleton.Line width={25} />
@@ -82,6 +82,7 @@ const Pokemon = () => {
                 onClick={() => handleDetail(item.url)}
                 key={i}
                 name={item.name}
+                id={i + 1}
                 src={`https://img.pokemondb.net/artwork/${item.name}.jpg`}
                 loading={loading}
               />

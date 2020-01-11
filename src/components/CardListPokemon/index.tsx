@@ -1,21 +1,23 @@
 import React from "react";
 import { Skeleton } from "../../components";
-import { Wrapper, ImageView } from "./styled";
+import { Wrapper, ImageView, MainWrapper, Number } from "./styled";
 
 export interface PropsCard extends React.HTMLAttributes<HTMLDivElement> {
   name?: string;
   src?: string;
   loading?: boolean;
+  id?: any;
 }
 const CardListPokemon: React.FC<PropsCard> = ({
   name,
   src,
   loading,
+  id,
   ...props
 }) => {
   return (
-    <>
-      <Wrapper {...props}>
+    <MainWrapper {...props}>
+      <Wrapper>
         {loading ? (
           <ImageView>
             <img src={src} alt="pokemon" />
@@ -31,7 +33,8 @@ const CardListPokemon: React.FC<PropsCard> = ({
           )}
         </div>
       </Wrapper>
-    </>
+      <Number>#{id < 10 ? `0${id}` : id}</Number>
+    </MainWrapper>
   );
 };
 

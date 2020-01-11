@@ -1,6 +1,6 @@
 import React from "react";
 import { Tags } from "../../../components";
-import { More, Moredetail, TitleMore } from "../styled";
+import { Moredetail, TitleMore, Moves } from "../styled";
 
 export interface Props {
   detail?: any;
@@ -29,12 +29,28 @@ const MoreDetail: React.FC<Props> = ({ detail, types }) => {
           </div>
         </div>
         <div>
-          <span>Weakness</span>
-          <Tags color="grass">Grass</Tags>
+          <span>Types</span>
+          {detail.types &&
+            detail.types.map((item: any, i: number) => {
+              return (
+                <Tags key={i} color={item.type.name}>
+                  {item.type.name}
+                </Tags>
+              );
+            })}
         </div>
-        <div>
-          <span>Resistant</span>
-          <Tags color="poison">Poison</Tags>
+        <div className="moves">
+          <span>Moves</span>
+          <Moves>
+            {detail.moves &&
+              detail.moves.map((item: any, i: number) => {
+                return (
+                  <Tags key={i} color={types}>
+                    {item.move.name}
+                  </Tags>
+                );
+              })}
+          </Moves>
         </div>
       </Moredetail>
     </>

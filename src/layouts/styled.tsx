@@ -70,17 +70,25 @@ export const TabBottomStyle = styled.div`
   display: flex;
   transition: all 0.2s ease;
   justify-content: space-around;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
   > div {
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
     &.active {
       background-color: #fff;
-      color: rgb(3, 151, 12);
+      a {
+        color: rgb(3, 151, 12);
+      }
     }
     &:hover {
       background-color: #fff;
-      color: rgb(3, 151, 12);
+      a {
+        color: rgb(3, 151, 12);
+      }
     }
   }
 `;
