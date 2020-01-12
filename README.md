@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Link Live app :
+
+open app [https://pokedex.ihksansanhas.now.sh]
 
 In the project directory, you can run:
 
