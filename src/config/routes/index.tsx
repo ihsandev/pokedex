@@ -1,20 +1,19 @@
-import React from "react";
 import { Pokemon, DetailPokemon, MyListPokemon } from "../../containers";
 
 const routes = [
   {
     path: "/home",
-    component: <Pokemon />,
+    component: Pokemon,
     exact: true
   },
   {
     path: "/pokemon/detail/:name",
-    component: <DetailPokemon />,
+    component: DetailPokemon,
     exact: true
   },
   {
     path: "/my-list",
-    component: <MyListPokemon />,
+    component: MyListPokemon,
     exact: true
   }
 ];

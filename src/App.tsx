@@ -12,14 +12,10 @@ const App: React.FC = () => {
   return (
     <Router>
       <Switch>
-        <Redirect from="/" to="/home" />
+        <Redirect exact from="/" to="/home" />
         {routes &&
-          routes.map((route, i) => {
-            return (
-              <Route key={i} exact={route.exact} path={route.path}>
-                {route.component}
-              </Route>
-            );
+          routes.map((route: any, i: number) => {
+            return <Route key={i} {...route} />;
           })}
       </Switch>
     </Router>
