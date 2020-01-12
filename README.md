@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 open app [https://pokedex.ihksansanhas.now.sh]
 
+## Github Link :
+
+repo : [https://github.com/ihsandev/pokedex]
+
 In the project directory, you can run:
 
 ### `yarn start`
