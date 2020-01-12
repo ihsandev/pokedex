@@ -83,7 +83,7 @@ export const Search = styled.div`
   input {
     background: rgba(255, 255, 255, 0.3);
     outline: none;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border: none;
     color: #000000;
     border-radius: 50px;
