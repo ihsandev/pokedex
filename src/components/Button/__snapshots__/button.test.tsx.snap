@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Button with props 1`] = `
+<StyledComponent
+  bottom={20}
+  color="grass"
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": false,
+        "rules": Array [
+          "
+  margin-top: ",
+          [Function],
+          "px;
+  margin-bottom: ",
+          [Function],
+          "px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  border: 1.5px solid ",
+          [Function],
+          ";
+  border-radius: 50px;
+  padding: 10px 30px;
+  outline: none;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: ",
+          [Function],
+          ";
+    color: #fff;
+  }
+  ",
+          "@media (min-width: 575.98px)",
+          " {
+    width: inherit;
+  }
+",
+        ],
+      },
+      "displayName": "styled.button",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "button",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+  top={20}
+>
+  Test
+</StyledComponent>
+`;
+
+exports[`render Button without props 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "sc-bdVaJa",
+        "isStatic": false,
+        "rules": Array [
+          "
+  margin-top: ",
+          [Function],
+          "px;
+  margin-bottom: ",
+          [Function],
+          "px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  border: 1.5px solid ",
+          [Function],
+          ";
+  border-radius: 50px;
+  padding: 10px 30px;
+  outline: none;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: ",
+          [Function],
+          ";
+    color: #fff;
+  }
+  ",
+          "@media (min-width: 575.98px)",
+          " {
+    width: inherit;
+  }
+",
+        ],
+      },
+      "displayName": "styled.button",
+      "foldedComponentIds": Array [],
+      "render": [Function],
+      "styledComponentId": "sc-bdVaJa",
+      "target": "button",
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+>
+  Test
+</StyledComponent>
+`;

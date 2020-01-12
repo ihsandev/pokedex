@@ -4,6 +4,7 @@ import { CardListPokemon, Skeleton } from "../../components";
 import { GET_POKEMON } from "../../config/api";
 import { Total, LoadingMore } from "./styled";
 import QuickDetail from "./quickDetail";
+import Loading from "./loading";
 import axios from "axios";
 
 const Pokemon = () => {
@@ -77,7 +78,7 @@ const Pokemon = () => {
         )}
       </Total>
       <div>
-        {pokemon &&
+        {pokemon && pokemon.length > 0 ? (
           pokemon.map((item: any, i: number) => {
             return (
               <CardListPokemon
@@ -88,7 +89,10 @@ const Pokemon = () => {
                 src={`https://img.pokemondb.net/artwork/${item.name}.jpg`}
               />
             );
-          })}
+          })
+        ) : (
+          <Loading />
+        )}
         {loadingMore && (
           <LoadingMore>
             <Skeleton.Line width={80} height={80} />

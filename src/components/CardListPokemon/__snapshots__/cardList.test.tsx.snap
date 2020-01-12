@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render CardList with props 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <img
+        alt="pokemon"
+        src="https://img.pokemondb.net/artwork/bulbasaur.jpg"
+      />
+    </styled.div>
+    <div>
+      <h3>
+        Bulbasaur
+      </h3>
+    </div>
+  </styled.div>
+  <styled.div>
+    #
+    01
+  </styled.div>
+</styled.div>
+`;
+
+exports[`render CardList without props 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <img
+        alt="pokemon"
+      />
+    </styled.div>
+    <div>
+      <h3 />
+    </div>
+  </styled.div>
+  <styled.div>
+    #
+  </styled.div>
+</styled.div>
+`;

@@ -92,8 +92,10 @@ export const PokemonImage = styled.div`
 `;
 
 export const LoadingMore = styled.div`
-  margin-top: 30px;
   font-weight: bold;
   display: flex;
+  border: 1px solid #eaeaea;
+  border-radius: 15px;
+  margin-bottom: 10px;
   align-items: center;
 `;

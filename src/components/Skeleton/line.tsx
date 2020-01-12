@@ -37,8 +37,8 @@ const LineStyle: any = styled.div`
   border-radius: 4px;
 `;
 
-const Line: React.FC<Props> = ({ width, height, mb, mt, mr, ml, ...props }) => {
-  return <LineStyle mb={mb} mt={mt} width={width} height={height} {...props} />;
+const Line: React.FC<Props> = ({ ...props }) => {
+  return <LineStyle {...props} />;
 };
 
 export default Line;

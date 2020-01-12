@@ -1,12 +1,22 @@
 import React from "react";
-import { Wrapper, ImageView, MainWrapper, Number } from "./styled";
+import { Icon } from "../../components";
+import { Wrapper, ImageView, MainWrapper, Number, Delete } from "./styled";
 
 export interface PropsCard extends React.HTMLAttributes<HTMLDivElement> {
   name?: string;
   src?: string;
   id?: any;
+  isDelete?: boolean;
+  onDelete?: any;
 }
-const CardListPokemon: React.FC<PropsCard> = ({ name, src, id, ...props }) => {
+const CardListPokemon: React.FC<PropsCard> = ({
+  name,
+  src,
+  id,
+  isDelete,
+  onDelete,
+  ...props
+}) => {
   return (
     <MainWrapper {...props}>
       <Wrapper>
@@ -17,7 +27,13 @@ const CardListPokemon: React.FC<PropsCard> = ({ name, src, id, ...props }) => {
           <h3>{name}</h3>
         </div>
       </Wrapper>
-      <Number>#{id < 10 ? `0${id}` : id}</Number>
+      {isDelete ? (
+        <Delete onClick={onDelete}>
+          <Icon name="ri-delete-bin-2-line" size={30} color="red" />
+        </Delete>
+      ) : (
+        <Number>#{id < 10 ? `0${id}` : id}</Number>
+      )}
     </MainWrapper>
   );
 };

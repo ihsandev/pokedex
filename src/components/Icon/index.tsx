@@ -1,11 +1,16 @@
 import React from "react";
-import "remixicon/fonts/remixicon.css";
+import { IconStyle } from "./styled";
 
-const Icon = ({ name, size }: any) => {
+export interface Props {
+  name?: string;
+  size?: number;
+  color?: string;
+}
+const Icon: React.FC<Props> = ({ name, ...props }) => {
   return (
-    <div style={{ fontSize: size }}>
+    <IconStyle {...props}>
       <i className={name} />
-    </div>
+    </IconStyle>
   );
 };
 

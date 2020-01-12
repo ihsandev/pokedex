@@ -18,6 +18,15 @@ const MyList = () => {
   useEffect(() => {
     getMyList();
   }, []);
+
+  const handleDelete = (index: number) => {
+    const list: any = localStorage.getItem("list");
+    let listValue = JSON.parse(list);
+    listValue.splice(index, 1);
+    setList(listValue);
+    localStorage.setItem("list", JSON.stringify(listValue));
+    getMyList();
+  };
   return (
     <MainLayout>
       <Title>My List Pokemon</Title>
@@ -30,6 +39,8 @@ const MyList = () => {
                 name={item.nickName}
                 id={i + 1}
                 src={`https://img.pokemondb.net/artwork/${item.name}.jpg`}
+                isDelete={true}
+                onDelete={() => handleDelete(i)}
               />
             );
           })

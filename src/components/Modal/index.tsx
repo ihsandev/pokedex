@@ -4,7 +4,7 @@ import { ModalWrapper, ModalContent, Close } from "./styled";
 
 const modalRoot: any = document.querySelector("#modal");
 
-export interface PropsModal {
+export interface PropsModal extends React.HTMLAttributes<HTMLDivElement> {
   visible: boolean;
   onClose: any;
 }

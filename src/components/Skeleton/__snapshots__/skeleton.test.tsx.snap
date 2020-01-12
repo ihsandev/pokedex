@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Skeleton with props 1`] = `
+<styled.div
+  height={40}
+  mb={2}
+  ml={2}
+  mr={2}
+  mt={2}
+  width={40}
+/>
+`;

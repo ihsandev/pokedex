@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Icon with props 1`] = `
+<styled.div
+  color="red"
+  size={30}
+>
+  <i
+    className="ri-delete-bin-2-line"
+  />
+</styled.div>
+`;

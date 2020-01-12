@@ -51,3 +51,7 @@ export const Number = styled.div`
     font-size: 2em;
   }
 `;
+
+export const Delete = styled.div`
+  cursor: pointer;
+`;
