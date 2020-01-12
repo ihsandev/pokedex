@@ -11,8 +11,8 @@ import routes from "./config/routes";
 const App: React.FC = () => {
   return (
     <Router>
-      <Redirect from="/" to="/home" />
       <Switch>
+        <Redirect from="/" to="/home" />
         {routes &&
           routes.map((route, i) => {
             return (
