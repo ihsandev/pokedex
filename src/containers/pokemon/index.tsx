@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MainLayout from "../../layouts";
 import { CardListPokemon, Skeleton } from "../../components";
 import { GET_POKEMON } from "../../config/api";
-import { Total, LoadingMore } from "./styled";
+import { Total, LoadingMore, Search } from "./styled";
 import QuickDetail from "./quickDetail";
 import Loading from "./loading";
 import axios from "axios";
@@ -15,6 +15,7 @@ const Pokemon = () => {
   const [urlDetail, setUrlDetail] = useState("");
   const [loading, setLoading] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
+  const [keyword, setKeyword] = useState("");
 
   const getPokemon = () => {
     return new Promise((resolve, reject) => {
@@ -47,8 +48,10 @@ const Pokemon = () => {
 
   const handleScroll = () => {
     const element = document.documentElement;
+    // console.log("inner+scroll", window.innerHeight + window.scrollY);
+    // console.log("ofsetheight", element.offsetHeight);
     if (
-      window.innerHeight + element.scrollTop === element.offsetHeight &&
+      window.innerHeight + window.scrollY === element.offsetHeight &&
       loadingMore
     ) {
       setPage(page + 20); // load more data
@@ -59,6 +62,10 @@ const Pokemon = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
+
+  const filterData = pokemon.filter((filt: any) =>
+    filt.name.toLowerCase().includes(keyword.toLowerCase())
+  );
 
   return (
     <MainLayout>
@@ -78,8 +85,16 @@ const Pokemon = () => {
         )}
       </Total>
       <div>
+        <Search>
+          <input
+            placeholder="Search pokemon"
+            onChange={(e: any) => setKeyword(e.target.value)}
+          />
+        </Search>
+      </div>
+      <div>
         {pokemon && pokemon.length > 0 ? (
-          pokemon.map((item: any, i: number) => {
+          filterData.map((item: any, i: number) => {
             return (
               <CardListPokemon
                 onClick={() => handleDetail(item.url)}

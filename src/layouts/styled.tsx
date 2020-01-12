@@ -26,7 +26,7 @@ export const HeaderStyle = styled.header`
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 5px 10px;
   ${MediaQuery.smMin} {
     padding: 5px 0px;
@@ -34,21 +34,7 @@ export const Nav = styled.nav`
 `;
 export const Brand = styled.div`
   img {
-    width: 100px;
-  }
-`;
-
-export const Search = styled.div`
-  input {
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
-    outline: none;
-    padding: 5px 10px;
-    color: #fff;
-    ::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-    }
-    border-radius: 50px;
+    width: 125px;
   }
 `;
 

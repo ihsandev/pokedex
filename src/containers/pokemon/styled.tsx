@@ -99,3 +99,23 @@ export const LoadingMore = styled.div`
   margin-bottom: 10px;
   align-items: center;
 `;
+
+export const Search = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+  input {
+    background: inherit;
+    border: 1px solid #eaeaea;
+    outline: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-color: rgb(3, 151, 12);
+    color: #000000;
+    border-radius: 50px;
+    &:focus {
+      box-shadow: 0px 1px 5px rgba(3, 151, 12, 0.5);
+    }
+  }
+`;

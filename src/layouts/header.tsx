@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/image/pokedex.png";
 import { Link } from "react-router-dom";
-import { HeaderStyle, Nav, Brand, Search, Container } from "./styled";
+import { HeaderStyle, Nav, Brand, Container } from "./styled";
 
 const Header: React.FC = () => (
   <HeaderStyle>
@@ -12,9 +12,6 @@ const Header: React.FC = () => (
             <img src={logo} alt="logo_pokedex" />
           </Brand>
         </Link>
-        <Search>
-          <input placeholder="Search pokemon" />
-        </Search>
       </Nav>
     </Container>
   </HeaderStyle>
