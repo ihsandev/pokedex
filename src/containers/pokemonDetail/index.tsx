@@ -36,7 +36,7 @@ const DetailPokemon: React.FC = () => {
   useEffect(() => {
     getDetail();
   }, [name]);
-  Object.keys(detail) && console.log(detail);
+
   return (
     <MainLayout>
       {Object.keys(detail) && (

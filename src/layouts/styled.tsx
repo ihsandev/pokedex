@@ -26,7 +26,7 @@ export const HeaderStyle = styled.header`
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 5px 10px;
   ${MediaQuery.smMin} {
     padding: 5px 0px;
@@ -34,7 +34,7 @@ export const Nav = styled.nav`
 `;
 export const Brand = styled.div`
   img {
-    width: 125px;
+    width: 100px;
   }
 `;
 
@@ -75,6 +75,23 @@ export const TabBottomStyle = styled.div`
       a {
         color: rgb(3, 151, 12);
       }
+    }
+  }
+`;
+
+export const Search = styled.div`
+  input {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    padding: 10px 20px;
+    border: none;
+    color: #000000;
+    border-radius: 50px;
+    ::placeholder {
+      color: #fff;
+    }
+    &:focus {
+      box-shadow: 0px 1px 5px rgba(3, 151, 12, 0.5);
     }
   }
 `;

@@ -2,20 +2,21 @@ import React, { useState, useEffect } from "react";
 import MainLayout from "../../layouts";
 import { CardListPokemon, Skeleton } from "../../components";
 import { GET_POKEMON } from "../../config/api";
-import { Total, LoadingMore, Search } from "./styled";
+import { Total, LoadingMore } from "./styled";
 import QuickDetail from "./quickDetail";
 import Loading from "./loading";
 import axios from "axios";
+import { connect } from "react-redux";
+import { setPage } from "../../config/redux/actions/pokemon";
 
-const Pokemon = () => {
+const Pokemon = ({ page, keyword, setPage }: any) => {
   const [pokemon, setPokemon] = useState([]);
   const [total, setTotal] = useState(0);
-  const [page, setPage] = useState(20);
   const [detailPokemon, setDetailPokemon] = useState(false);
   const [urlDetail, setUrlDetail] = useState("");
   const [loading, setLoading] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
-  const [keyword, setKeyword] = useState("");
+  // const [keyword, setKeyword] = useState("");
 
   const getPokemon = () => {
     return new Promise((resolve, reject) => {
@@ -54,7 +55,7 @@ const Pokemon = () => {
       window.innerHeight + window.scrollY === element.offsetHeight &&
       loadingMore
     ) {
-      setPage(page + 20); // load more data
+      setPage();
     }
   };
 
@@ -85,14 +86,6 @@ const Pokemon = () => {
         )}
       </Total>
       <div>
-        <Search>
-          <input
-            placeholder="Search pokemon"
-            onChange={(e: any) => setKeyword(e.target.value)}
-          />
-        </Search>
-      </div>
-      <div>
         {pokemon && pokemon.length > 0 ? (
           filterData.map((item: any, i: number) => {
             return (
@@ -119,4 +112,15 @@ const Pokemon = () => {
   );
 };
 
-export default Pokemon;
+const mapStateToProps = (state: any) => {
+  return {
+    page: state.pokemon.page,
+    keyword: state.pokemon.keyword
+  };
+};
+
+const mapDispatchToProps = {
+  setPage
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Pokemon);

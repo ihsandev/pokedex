@@ -17,18 +17,21 @@ const QuickDetail: React.FC<Props> = ({
   const [data, setData] = useState<any>([]);
   const [types, setTypes] = useState("");
   const getDetail = () => {
-    axios
-      .get(urlDetail)
-      .then(res => {
-        const { data } = res;
-        setData(data);
-        const types =
-          Object.keys(data) && data.types && data.types[0].type.name;
-        setTypes(types);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    return new Promise((resolve, reject) => {
+      axios
+        .get(urlDetail)
+        .then(res => {
+          const { data } = res;
+          setData(data);
+          resolve(data);
+          const types =
+            Object.keys(data) && data.types && data.types[0].type.name;
+          setTypes(types);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
   };
 
   useEffect(() => {
@@ -36,7 +39,7 @@ const QuickDetail: React.FC<Props> = ({
       getDetail();
     }
   }, [urlDetail]);
-  Object.keys(data) && console.log(data);
+
   return (
     <>
       {Object.keys(data) && (

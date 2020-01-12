@@ -4,8 +4,18 @@ import "./index.css";
 import "remixicon/fonts/remixicon.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import rootReducers from "./config/redux/reducers";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const store = createStore(rootReducers);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

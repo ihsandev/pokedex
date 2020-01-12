@@ -1,9 +1,11 @@
 import React from "react";
 import logo from "../assets/image/pokedex.png";
 import { Link } from "react-router-dom";
-import { HeaderStyle, Nav, Brand, Container } from "./styled";
+import { HeaderStyle, Nav, Brand, Container, Search } from "./styled";
+import { setKeyword } from "../config/redux/actions/pokemon";
+import { connect } from "react-redux";
 
-const Header: React.FC = () => (
+const Header: React.FC = ({ setKeyword }: any) => (
   <HeaderStyle>
     <Container>
       <Nav>
@@ -12,9 +14,18 @@ const Header: React.FC = () => (
             <img src={logo} alt="logo_pokedex" />
           </Brand>
         </Link>
+        <Search>
+          <input
+            placeholder="Search pokemon.."
+            onChange={(e: any) => setKeyword(e.target.value)}
+          />
+        </Search>
       </Nav>
     </Container>
   </HeaderStyle>
 );
 
-export default Header;
+const mapDispatchToProps = {
+  setKeyword
+};
+export default connect(null, mapDispatchToProps)(Header);
